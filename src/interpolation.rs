@@ -6,7 +6,7 @@ use bevy::{
         component::Component,
         entity::Entity,
         query::{Added, Or, With, Without},
-        schedule::{common_conditions::resource_exists, IntoSystemConfigs},
+        schedule::IntoSystemConfigs,
         system::{Commands, Query, Res, Resource},
         world::EntityMut,
     },
