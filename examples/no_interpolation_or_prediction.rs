@@ -6,7 +6,11 @@ use std::{
     time::SystemTime,
 };
 
-use bevy::{prelude::*, winit::UpdateMode::Continuous, winit::WinitSettings};
+use bevy::{
+    color::palettes::css::LIME,
+    prelude::*,
+    winit::{UpdateMode::Continuous, WinitSettings},
+};
 use clap::Parser;
 use serde::{Deserialize, Serialize};
 
@@ -79,7 +83,7 @@ impl SimpleBoxPlugin {
                 commands.spawn(PlayerBundle::new(
                     ClientId::SERVER,
                     Vec2::ZERO,
-                    Color::GREEN,
+                    Color::Srgba(LIME),
                 ));
             }
             Cli::Server { port } => {
@@ -118,7 +122,7 @@ impl SimpleBoxPlugin {
                 commands.spawn(PlayerBundle::new(
                     ClientId::SERVER,
                     Vec2::ZERO,
-                    Color::GREEN,
+                    Color::Srgba(LIME),
                 ));
             }
             Cli::Client { port, ip } => {
@@ -177,7 +181,7 @@ impl SimpleBoxPlugin {
                     commands.spawn(PlayerBundle::new(
                         *client_id,
                         Vec2::ZERO,
-                        Color::rgb(r, g, b),
+                        Color::srgb(r, g, b),
                     ));
                 }
                 ServerEvent::ClientDisconnected { client_id, reason } => {
