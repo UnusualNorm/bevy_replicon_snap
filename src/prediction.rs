@@ -48,7 +48,7 @@ pub struct EventSnapshot<T: Event> {
 #[derive(Resource)]
 pub struct PredictedEventHistory<T: Event>(pub VecDeque<EventSnapshot<T>>);
 
-#[derive(Component, Deserialize, Serialize, Reflect)]
+#[derive(Component, Deserialize, Serialize, Reflect, Debug)]
 pub struct OwnerPredicted;
 
 #[derive(Component, Reflect)]

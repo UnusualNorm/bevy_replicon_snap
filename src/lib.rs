@@ -19,7 +19,7 @@ pub struct SnapshotInterpolationPlugin {
     pub max_tick_rate: u16,
 }
 
-#[derive(Component, Deserialize, Serialize, Reflect)]
+#[derive(Component, Deserialize, Serialize, Reflect, Debug)]
 pub struct NetworkOwner(pub u64);
 
 /// Sets for interpolation systems.

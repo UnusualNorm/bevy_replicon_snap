@@ -35,7 +35,7 @@ pub trait Interpolate {
     fn interpolate(&self, other: Self, t: f32) -> Self;
 }
 
-#[derive(Component, Deserialize, Serialize, Reflect)]
+#[derive(Component, Deserialize, Serialize, Reflect, Debug)]
 pub struct Interpolated;
 
 #[derive(Deserialize, Serialize, Reflect)]
